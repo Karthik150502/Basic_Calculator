@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=M+PLUS+1p:wght@100&family=Montserrat:wght@200&family=Oswald:wght@300&display=swap" rel="stylesheet">
+</head>
+
+
+<style>
+    *{
+        text-align:center;
+        font-weight: 750;
+        font-family: 'Cinzel', serif;
+        font-family: 'M PLUS 1p', sans-serif;
+    }
+
+
+    body{
+        background: url("back1.jpg");
+        display: grid;
+        place-items: center;
+    }
+
+    #main{
+        background-color: black();
+        backdrop-filter: saturate(180%) blur(5px);
+        border-radius: 10px;
+        margin-top: 25px;
+        padding:20px;
+        width: 20%;
+    }
+
+    .display{
+        color: black;
+        border: 1px solid black;
+        background-color: aquamarine;
+        border-radius: 20px;
+        width: 250px;
+        height: 100px;
+    }
+
+
+    #buttons{
+        margin-top: 10px;
+        /* border: 1px solid black; */
+        display: flex;
+        flex-wrap: wrap;
+        width: 250px;
+        height: 250px;
+    }
+
+    #buttons .btns{
+        margin: 5px;
+        height: 40px;
+        width: 40px;
+        border: none;
+        border-radius: 50%;
+        background-color: white;
+    }
+
+    #buttons .btns:hover{
+        color: white;
+        background-color: black;
+    }
+
+    #buttons .btns:active{
+        color: aqua;
+        background-color: black;
+    }
+    .btns{
+        display: grid;
+        place-items: center;
+    }
+
+</style>
+
+<body>
+    
+
+    <div id="main">
+            <input class="display" type="text" id='res'>
+        <div id="buttons">
+            <input class="btns" type="button" onclick="enter('+')" value="+">
+            <input class="btns" type="button" onclick="enter('-')" value="-">
+            <input class="btns" type="button" onclick="enter('*')" value="x">
+            <input class="btns" type="button" onclick="enter('/')" value="/">
+
+            <input class="btns" type="button" onclick="enter('%')" value="%">
+            <input class="btns" type="button" onclick="enter('**2')" value="^2">
+            <input class="btns" type="button" onclick="enter('**3')" value="^3">
+
+
+
+            <input class="btns" type="button" onclick="enter('1')" value="1">
+            <input class="btns" type="button" onclick="enter('2')" value="2">
+            <input class="btns" type="button" onclick="enter('3')" value="3">
+            <input class="btns" type="button" onclick="enter('4')" value="4">
+            <input class="btns" type="button" onclick="enter('5')" value="5">
+            <input class="btns" type="button" onclick="enter('6')" value="6">
+            <input class="btns" type="button" onclick="enter('7')" value="7">
+            <input class="btns" type="button" onclick="enter('8')" value="8">
+            <input class="btns" type="button" onclick="enter('9')" value="9">
+            <input class="btns" type="button" onclick="enter('0')" value="0">
+            <input class="btns" type="button" onclick="enter('00')" value="00">
+
+            <input class="btns" type="button" onclick="solve()" value="=">
+            <input class="btns" type="button" onclick="back()" value="&laquo;">
+            <input class="btns" type="button" onclick="erase()" value="C">
+            <!-- <input class="btns" type="button" onclick="clear()" value="AC"> -->
+        </div>
+    </div>
+
+
+
+    <script>
+        
+
+        const enter=(val)=>{
+            let newexp = document.getElementById('res').value += val
+        }
+
+        const solve=()=>{
+            let exp = document.getElementById('res').value
+            let finalres = eval(exp)
+            document.getElementById('res').value = finalres
+        }
+
+        const erase=()=>{
+            document.getElementById('res').value = ''
+        }
+
+        const back=()=>{
+            let exp = document.getElementById('res').value
+            document.getElementById('res').value = exp.slice(0,-1)
+        }
+
+
+        // function enter(val) {
+        //  let v = document.getElementById('res').value += val
+        // }
+        // function solve() {
+        //     let exp1 = document.getElementById('res').value
+        //     let num = eval(exp1)
+        //     document.getElementById('res').value = num
+        // }
+        // function back(){
+        //     let ev = document.getElementById('res').value
+        //     ev1 = ev.slice(0,-1)
+        //     document.getElementById('res').value = ev1
+        // }
+        // function clear(){
+        //     document.getElementById('res').value = ''
+        // }
+
+    </script>
+
+
+
+
+</body>
+</html>
